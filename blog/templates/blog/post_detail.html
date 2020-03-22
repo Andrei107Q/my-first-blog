@@ -1,7 +1,8 @@
 {% extends 'blog/base.html' %}
 
+
 {% block content %}
-    {% for post in posts %}
+     {% if post.published_date  %}
         <div class="list-group m-3 p-1">
             <a href="{% url 'post_detail' pk=post.pk %}" class="list-group-item list-group-item-action">
                 <div class="d-flex w-100 justify-content-between">
@@ -11,5 +12,5 @@
                 <p class="mb-1">{{ post.text|linebreaksbr }}</p>
             </a>
         </div>
-    {% endfor %}
+    {% endif %}
 {% endblock %}
